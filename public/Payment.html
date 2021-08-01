@@ -2,9 +2,67 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Payment Details</title>
+<!--  Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<!--  Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+<style>
+
+.bg-blue {
+    height: 70px;
+    background-color: blue;
+    text-align: center;
+    color: white;
+    line-height: 80px;
+    font-size: 20px;
+}
+
+.principal:hover .principalimg {
+  opacity: 0.5;
+}
+
+.principal {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color:lightblue;
+    height: auto;
+}
+
+
+</style>
 </head>
 <body>
-
+   <div class="container principal">
+    <div class="col bg-blue">
+         Select your method of payment.
+    </div>
+  </div>
+  <div class="container principal">
+    proceed with previously used payment method
+    <div class="container principalimg">
+      <a href="#" onClick="autoFill(); return true;" >
+        <img src="https://www.rbcroyalbank.com/credit-cards/app/assets/cards/mc1_cashbackmc_en_sm@2x.png" alt="card-info" height="200" width="350">
+      </a>
+    </div>
+  </div>
+  <div class="container principal">
+    <form action="OrderStatus.html" method="post">
+      <label for="cardnum">Card Number:</label><br>
+      <input type="text" id="cardnum" name="cardnum" required><br>
+      <label for="expdate">Expiry Details:</label><br>
+      <input type="date" id="expdate" name="expdate" required>
+      <input type="text" id="cvv" name="cvv" placeholder="CVV" required><br>
+      <input type="submit" value="Submit">
+</form>
+  </div>
+  <script type="text/javascript">
+    function autoFill() {
+      document.getElementById('cardnum').value = "12345678910";
+      document.getElementById('expdate').value = "01/06/24";
+      document.getElementById('cvv').value = "644";
+    }
+  </script>
 </body>
 </html>
